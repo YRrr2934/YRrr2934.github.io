@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>万家大小姐驾到，统统闪开</title>
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: '楷体', KaiTi, serif;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            max-width: 800px;
+            margin: 20px;
+        }
+
+        .title {
+            font-size: 2.5em;
+            color: #ff758c;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(to right, #ff758c 0%, #ff7eb3 50%, #ff758c 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 3s linear infinite;
+        }
+
+        .content {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .highlight {
+            color: #ff758c;
+            font-weight: bold;
+        }
+
+        .animate-element {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #a18cd1);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* 鼠标悬停效果 */
+        .container:hover {
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+
+        /* 闪光文字效果 */
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* 3D翻转效果 */
+        .highlight {
+            display: inline-block;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .highlight:hover {
+            transform: rotateY(360deg);
+        }
+
+        /* 波浪动画 */
+        .content p {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content p::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background: #ff758c;
+            transform: translateX(-100%);
+            animation: wave 2s infinite;
+        }
+
+        @keyframes wave {
+            50% { transform: translateX(100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <div class="title animate-element">欢迎来到我的个人主页</div>
+        <div class="content">
+            <p class="animate-element">
+                你好!我是一名充满热情的<span class="highlight">Web开发者</span>。我热爱创造优雅的用户界面和流畅的用户体验。
+            </p>
+            <p class="animate-element">
+                我擅长使用现代化的前端技术栈，包括<span class="highlight">HTML5</span>、<span class="highlight">CSS3</span>和<span class="highlight">JavaScript</span>。
+                通过这些工具，我致力于打造既美观又实用的网络应用。
+            </p>
+            <p class="animate-element floating">
+                如果你对我的工作感兴趣，欢迎继续浏览或与我联系！
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>
